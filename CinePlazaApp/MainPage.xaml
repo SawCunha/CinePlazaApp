@@ -28,7 +28,7 @@
             <Canvas.Background>
                 <SolidColorBrush Color="#FF534949" Opacity="0.35"/>
             </Canvas.Background>
-            <TextBlock x:Name="week" Canvas.Left="10" TextWrapping="Wrap" Canvas.Top="14" Width="402" Height="41" Foreground="Red" FontFamily="Script MT Bold" FontSize="26" FontWeight="Bold" FontStyle="Italic" SelectionHighlightColor="Black" />
+            <TextBlock x:Name="week" Canvas.Left="10" TextWrapping="Wrap" Canvas.Top="14" Width="402" Height="41" Foreground="Red" FontFamily="Script MT Bold" FontSize="24" FontWeight="Bold" FontStyle="Italic" SelectionHighlightColor="Black" />
         </Canvas>
 
     </Grid>
