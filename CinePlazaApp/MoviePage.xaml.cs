@@ -33,16 +33,10 @@ namespace CinePlazaApp
 
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
-            //Todo parâmetro chega pelo argumento e
-            //Você o recepciona e converte para o tipo de origem do parâmetro
-
             Movie dados = e.Parameter as Movie;
 
             image.Source = new BitmapImage(new Uri(dados.cover));
 
-            //Fazer o restante de sua implementação aqui...
-            //...
-            //...
         }
 
         private void backBtn_Click(object sender, RoutedEventArgs e)

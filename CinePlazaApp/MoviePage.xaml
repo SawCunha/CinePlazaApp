@@ -21,9 +21,9 @@
         </Canvas>
         <Pivot Title="Filme" Margin="0,6,0,7" Grid.Row="1" Foreground="Red">
             <PivotItem  Header="Sobre" Margin="12,-41,12,0" Foreground="Red" Background="{x:Null}" BorderBrush="#FFF71515" >
-                <Grid Background="White"/>
+                <Grid/>
             </PivotItem>
-            <PivotItem Header="Cover">
+            <PivotItem Header="Cover" Margin="12,-43,12,0">
                 <Image x:Name="image" Margin="18,14,15,13.2"/>
             </PivotItem>
         </Pivot>

@@ -64,7 +64,7 @@ namespace CinePlazaApp
 
             TextBlock nameMovie = new TextBlock();
             nameMovie.Text = movie.name;
-            nameMovie.FontSize = 25;
+            nameMovie.FontSize = 20;
             nameMovie.TextWrapping = TextWrapping.Wrap;
             nameMovie.Foreground = new SolidColorBrush(Colors.White);
             Canvas.SetLeft(nameMovie, 120);
@@ -72,7 +72,7 @@ namespace CinePlazaApp
 
             TextBlock genreMovie = new TextBlock();
             genreMovie.Text = movie.genre;
-            genreMovie.FontSize = 25;
+            genreMovie.FontSize = 20;
             genreMovie.TextWrapping = TextWrapping.Wrap;
             genreMovie.Foreground = new SolidColorBrush(Colors.White);
             Canvas.SetLeft(genreMovie, 120);
