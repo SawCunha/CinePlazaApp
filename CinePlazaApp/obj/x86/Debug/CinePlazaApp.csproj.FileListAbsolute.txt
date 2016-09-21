@@ -28,6 +28,7 @@ C:\Users\samuk\OneDrive\GIT\CinePlazaApp\CinePlazaApp\bin\x86\Debug\System.Xml.d
 C:\Users\samuk\OneDrive\GIT\CinePlazaApp\CinePlazaApp\bin\x86\Debug\System.dll
 C:\Users\samuk\OneDrive\GIT\CinePlazaApp\CinePlazaApp\bin\x86\Debug\Microsoft.VisualBasic.dll
 C:\Users\samuk\OneDrive\GIT\CinePlazaApp\CinePlazaApp\bin\x86\Debug\Microsoft.Win32.Primitives.dll
+C:\Users\samuk\OneDrive\GIT\CinePlazaApp\CinePlazaApp\bin\x86\Debug\Newtonsoft.Json.dll
 C:\Users\samuk\OneDrive\GIT\CinePlazaApp\CinePlazaApp\bin\x86\Debug\System.AppContext.dll
 C:\Users\samuk\OneDrive\GIT\CinePlazaApp\CinePlazaApp\bin\x86\Debug\System.Collections.dll
 C:\Users\samuk\OneDrive\GIT\CinePlazaApp\CinePlazaApp\bin\x86\Debug\System.Collections.Concurrent.dll
@@ -199,4 +200,3 @@ C:\Users\samuk\OneDrive\GIT\CinePlazaApp\CinePlazaApp\obj\x86\Debug\qualifiers.t
 C:\Users\samuk\OneDrive\GIT\CinePlazaApp\CinePlazaApp\obj\x86\Debug\qualifiers.txt.intermediate
 C:\Users\samuk\OneDrive\GIT\CinePlazaApp\CinePlazaApp\obj\x86\Debug\MultipleQualifiersPerDimensionFound.txt
 C:\Users\samuk\OneDrive\GIT\CinePlazaApp\CinePlazaApp\obj\x86\Debug\ProjectArchitectures.txt
-C:\Users\samuk\OneDrive\GIT\CinePlazaApp\CinePlazaApp\bin\x86\Debug\Newtonsoft.Json.dll

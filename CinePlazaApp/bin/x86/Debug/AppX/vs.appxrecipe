@@ -10,25 +10,25 @@
     <PackageArchitecture>x86</PackageArchitecture>
     <PackageIdentityName>0fcb562a-05c6-42df-af5b-cbc8004ba8aa</PackageIdentityName>
     <IntermediateOutputPath>C:\Users\samuk\OneDrive\GIT\CinePlazaApp\CinePlazaApp\obj\x86\Debug\</IntermediateOutputPath>
-    <RegisteredManifestChecksum>504106BCE50BA67646F1B88AA8FD3988B08A1021823F33BC40E5E0B7C2EEB4BC</RegisteredManifestChecksum>
-    <RegisteredPackageMoniker>0fcb562a-05c6-42df-af5b-cbc8004ba8aa_1.0.0.0_x86__e50vv7estdq7e</RegisteredPackageMoniker>
+    <RegisteredManifestChecksum>017CF26D347323AE2A7698D8FE3AB51B2F5CF68613E6C8C42EA5A3C82706B409</RegisteredManifestChecksum>
+    <RegisteredPackageMoniker>0fcb562a-05c6-42df-af5b-cbc8004ba8aa_0.0.2.0_x86__e50vv7estdq7e</RegisteredPackageMoniker>
     <RegisteredUserModeAppID>0fcb562a-05c6-42df-af5b-cbc8004ba8aa_e50vv7estdq7e!App</RegisteredUserModeAppID>
     <RegisteredPackageID>0fcb562a-05c6-42df-af5b-cbc8004ba8aa</RegisteredPackageID>
     <RegisteredPackagePublisher>CN=samuk</RegisteredPackagePublisher>
-    <RegisteredVersion>1.0.0.0</RegisteredVersion>
+    <RegisteredVersion>0.0.2.0</RegisteredVersion>
     <JitOptimizationSuppressed>True</JitOptimizationSuppressed>
   </PropertyGroup>
   <ItemGroup>
     <AppXManifest Include="C:\Users\samuk\OneDrive\GIT\CinePlazaApp\CinePlazaApp\bin\x86\Debug\Core\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2016-09-21T12:26:15.738</Modified>
+      <Modified>2016-09-21T14:02:49.635</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
     <AppxPackagedFile Include="C:\Users\samuk\OneDrive\GIT\CinePlazaApp\CinePlazaApp\bin\x86\Debug\CinePlazaApp.exe">
       <PackagePath>entrypoint\CinePlazaApp.exe</PackagePath>
-      <Modified>2016-09-21T12:26:15.488</Modified>
+      <Modified>2016-09-21T14:02:47.227</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\samuk\.nuget\packages\Microsoft.ApplicationInsights\1.0.0\lib\portable-win81+wpa81\Microsoft.ApplicationInsights.dll">
       <PackagePath>Microsoft.ApplicationInsights.dll</PackagePath>
@@ -502,7 +502,7 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\samuk\OneDrive\GIT\CinePlazaApp\CinePlazaApp\bin\x86\Debug\CinePlazaApp.xr.xml">
       <PackagePath>CinePlazaApp.xr.xml</PackagePath>
-      <Modified>2016-09-21T12:08:30.637</Modified>
+      <Modified>2016-09-21T14:02:47.101</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Program Files %28x86%29\Windows Kits\10\UnionMetadata\Windows.winmd">
       <PackagePath>WinMetadata\Windows.winmd</PackagePath>
@@ -510,11 +510,11 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\samuk\OneDrive\GIT\CinePlazaApp\CinePlazaApp\bin\x86\Debug\resources.pri">
       <PackagePath>resources.pri</PackagePath>
-      <Modified>2016-09-21T12:24:11.397</Modified>
+      <Modified>2016-09-21T14:02:49.288</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\samuk\OneDrive\GIT\CinePlazaApp\CinePlazaApp\bin\x86\Debug\Core\CinePlazaApp.exe">
       <PackagePath>CinePlazaApp.exe</PackagePath>
-      <Modified>2016-09-21T12:26:15.736</Modified>
+      <Modified>2016-09-21T14:02:49.631</Modified>
     </AppxPackagedFile>
   </ItemGroup>
   <ItemGroup>

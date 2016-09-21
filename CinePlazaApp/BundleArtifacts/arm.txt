@@ -1,0 +1,2 @@
+MainPackage=C:\Users\samuk\OneDrive\GIT\CinePlazaApp\CinePlazaApp\bin\ARM\Debug\CinePlazaApp_0.0.2.0_ARM_Debug.appx
+SymbolPackage=C:\Users\samuk\OneDrive\GIT\CinePlazaApp\CinePlazaApp\AppPackages\CinePlazaApp_0.0.2.0_Debug_Test\CinePlazaApp_0.0.2.0_ARM_Debug.appxsym
