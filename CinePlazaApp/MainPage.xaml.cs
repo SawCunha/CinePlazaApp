@@ -37,7 +37,7 @@ namespace CinePlazaApp
         public MainPage()
         {
             this.InitializeComponent();
-
+            SystemNavigationManager.GetForCurrentView().AppViewBackButtonVisibility = AppViewBackButtonVisibility.Collapsed;
             inicializa_app();
         }
 
@@ -164,7 +164,7 @@ namespace CinePlazaApp
             }
         }
 
-        private void finalizApp()
+        private void exit_Click(object sender, RoutedEventArgs e)
         {
             //Obtem referencia do app para finalizar
             Application.Current.Exit();

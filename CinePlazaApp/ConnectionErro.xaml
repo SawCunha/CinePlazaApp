@@ -20,7 +20,7 @@
             <AppBarButton x:Name="backBtn" Icon="Back" Canvas.Left="15" Canvas.Top="4" Foreground="White" Height="39" BorderBrush="Red" Background="{x:Null}" Click="backBtn_Click"/>
         </Canvas>
         <Canvas Margin="10" Grid.Row="1" Background="#FF424242">
-            <Image x:Name="image" Source="Assets/offline.png" Stretch="Fill" Height="310" Canvas.Top="10" Width="340"/>
+            <Image x:Name="image" Source="Assets/offline.png" Stretch="Fill" Height="310" Canvas.Top="10" Width="340" Canvas.Left="10"/>
             <TextBlock x:Name="textBlock1" Canvas.Left="10" TextWrapping="Wrap" Canvas.Top="325" Height="215" Width="320" Foreground="White">
             	<Run Text="&#x9;"/>
             	<Run Text="O App necessita de Conexão"/>
