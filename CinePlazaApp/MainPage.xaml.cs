@@ -4,10 +4,13 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Net.NetworkInformation;
 using System.Runtime.InteropServices.WindowsRuntime;
+using System.Threading.Tasks;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
 using Windows.UI;
+using Windows.UI.Core;
 using Windows.UI.Popups;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
@@ -17,6 +20,7 @@ using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Media.Imaging;
 using Windows.UI.Xaml.Navigation;
+using Windows.UI.Xaml.Shapes;
 
 // The Blank Page item template is documented at http://go.microsoft.com/fwlink/?LinkId=402352&clcid=0x409
 
@@ -34,12 +38,50 @@ namespace CinePlazaApp
         {
             this.InitializeComponent();
 
-            gera_movies();
+            inicializa_app();
+        }
+
+        private async void inicializa_app()
+        {
+            
+            if (verifica_conexao())
+                gera_movies();
+            else
+                //Transfere para tela informada
+                await Dispatcher.RunAsync(CoreDispatcherPriority.Normal, () => Frame.Navigate(typeof(ConnectionErro)));
+        }
+
+        private bool verifica_conexao()
+        {
+            try
+            {
+                /*Verfica se o smartphone está conectado a internet caso
+                    esteja trasnfere para a tela de pesquisa, caso não ele
+                    informa o usuario que tem que estar conectado 
+                */
+                if (!NetworkInterface.GetIsNetworkAvailable())
+                {
+                    return false;
+                }
+                else
+                    return true;
+            }
+            catch (Exception)
+            {
+                return false;
+            }
         }
 
         public async void gera_movies()
         {
-            Movies movies = await ProcessaHTTP.processaAPI();
+            Movies movies = null;
+            movies = await ProcessaHTTP.processaAPI();
+            while (movies == null)
+            {
+                myProgressRing.Visibility = Visibility.Visible;
+                await Task.Delay(TimeSpan.FromSeconds(5 ));
+            }
+            myProgressRing.Visibility = Visibility.Collapsed;
             week.Text = movies.week;
             moviesObj = movies.movies;
             gera_list_movies(movies);
@@ -47,10 +89,25 @@ namespace CinePlazaApp
 
         private void gera_list_movies(Movies movies)
         {
+            listMovies.Items.Add(cria_separador());
             foreach (Movie movie in movies.movies)
             {
                 listMovies.Items.Add(cria_canvas_movie(movie));
+                listMovies.Items.Add(cria_separador());
             }
+        }
+
+        private Canvas cria_separador()
+        {
+            Canvas canvas = new Canvas();
+            Rectangle separador = new Rectangle();
+            separador.Height = 4;
+            separador.Stroke  = new SolidColorBrush(Colors.Red);
+            separador.Fill = new SolidColorBrush(Colors.Red);
+            Canvas.SetLeft(separador, 1);
+            Canvas.SetTop(separador, 2);
+            canvas.Children.Add(separador);
+            return canvas;
         }
 
         private Canvas cria_canvas_movie(Movie movie)
@@ -64,7 +121,7 @@ namespace CinePlazaApp
 
             TextBlock nameMovie = new TextBlock();
             nameMovie.Text = movie.name;
-            nameMovie.FontSize = 20;
+            nameMovie.FontSize = 18;
             nameMovie.TextWrapping = TextWrapping.Wrap;
             nameMovie.Foreground = new SolidColorBrush(Colors.White);
             Canvas.SetLeft(nameMovie, 120);
@@ -72,7 +129,7 @@ namespace CinePlazaApp
 
             TextBlock genreMovie = new TextBlock();
             genreMovie.Text = movie.genre;
-            genreMovie.FontSize = 20;
+            genreMovie.FontSize = 18;
             genreMovie.TextWrapping = TextWrapping.Wrap;
             genreMovie.Foreground = new SolidColorBrush(Colors.White);
             Canvas.SetLeft(genreMovie, 120);
@@ -85,27 +142,32 @@ namespace CinePlazaApp
             image.Source = new BitmapImage(new Uri(movie.cover));
             Canvas.SetLeft(image, 6);
             Canvas.SetTop(image, 5);
-
-            canvasMovie.Height = 105;
+            canvasMovie.Background = new SolidColorBrush(Color.FromArgb(100,66,66,66));
+            canvasMovie.Height = 107;
 
             canvasMovie.Children.Add(nameMovie);
             canvasMovie.Children.Add(genreMovie);
             canvasMovie.Children.Add(image);
             canvasMovie.Name = movie.name;
-            canvasMovie.DoubleTapped += CanvasMovie_DoubleTapped;
+            canvasMovie.PointerReleased += CanvasMovies_Released;
 
             return canvasMovie;  
         }
 
-        private void CanvasMovie_DoubleTapped(object sender, DoubleTappedRoutedEventArgs e)
+        private void CanvasMovies_Released(object sender, PointerRoutedEventArgs e)
         {
             Canvas canvas = (Canvas)sender;
             foreach (Movie movie in moviesObj)
             {
-                if(movie.name.Equals(canvas.Name))
-                    Frame.Navigate(typeof(MoviePage),movie);
+                if (movie.name.Equals(canvas.Name))
+                    Frame.Navigate(typeof(MoviePage), movie);
             }
-            
+        }
+
+        private void finalizApp()
+        {
+            //Obtem referencia do app para finalizar
+            Application.Current.Exit();
         }
     }
 }

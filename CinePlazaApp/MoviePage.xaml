@@ -7,24 +7,52 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
 
-    <Grid Background="Black">
+    <Grid Background="#FF212121">
         <Grid.RowDefinitions>
-            <RowDefinition Height="43*"/>
-            <RowDefinition Height="341*"/>
+            <RowDefinition Height="11*"/>
+            <RowDefinition Height="117*"/>
         </Grid.RowDefinitions>
-        <Canvas Margin="3,5">
+        <Canvas Margin="3,5,3,0">
             <Canvas.Background>
-                <SolidColorBrush Color="#FF534949" Opacity="0.35"/>
+                <SolidColorBrush Color="#FF212121"/>
             </Canvas.Background>
-            <TextBlock x:Name="textBlock" Canvas.Left="117" TextWrapping="Wrap" Text="CinePlazaApp" Canvas.Top="19" Width="245" Height="41" Foreground="Red" FontFamily="Script MT Bold" FontSize="36" FontWeight="Bold" FontStyle="Italic" SelectionHighlightColor="Black"/>
-            <AppBarButton x:Name="backBtn" Icon="Back" Canvas.Left="12" Canvas.Top="18" Foreground="Red" Height="47" BorderBrush="Red" Background="{x:Null}" Click="backBtn_Click"/>
+            <TextBlock x:Name="textBlock" Canvas.Left="101" TextWrapping="Wrap" Text="CinePlazaApp" Canvas.Top="5" Width="245" Height="41" Foreground="White" FontFamily="Script MT Bold" FontSize="36" FontWeight="Bold" FontStyle="Italic" SelectionHighlightColor="Black"/>
+            <AppBarButton x:Name="backBtn" Icon="Back" Canvas.Left="15" Canvas.Top="4" Foreground="White" Height="39" BorderBrush="Red" Background="{x:Null}" Click="backBtn_Click"/>
         </Canvas>
-        <Pivot Title="Filme" Margin="0,6,0,7" Grid.Row="1" Foreground="Red">
-            <PivotItem  Header="Sobre" Margin="12,-41,12,0" Foreground="Red" Background="{x:Null}" BorderBrush="#FFF71515" >
-                <Grid/>
+        <Pivot Title="Filme" Margin="0,6,0,7" Grid.Row="1" Foreground="White" Background="#FF303030">
+            <PivotItem  Margin="12,-41,12,0" Background="#FF424242" Foreground="{x:Null}" >
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="68*"/>
+                        <RowDefinition Height="99*"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="5*"/>
+                        <ColumnDefinition Width="97*"/>
+                    </Grid.ColumnDefinitions>
+                    <TextBlock x:Name="nomeFilme" HorizontalAlignment="Left" Margin="15.667,17,0,163" TextWrapping="Wrap" FontSize="18" Grid.Column="1" Width="53" Foreground="White">
+                		<Run Text="Filme:"/>
+                    </TextBlock>
+                    <TextBlock x:Name="genero" Margin="15.667,62,235,118" TextWrapping="Wrap" FontSize="18" Grid.Column="1" Foreground="White">
+                    	<Run Text="Genero:"/>
+                    </TextBlock>
+                    <TextBlock x:Name="duracao" Margin="15.667,107,228,73" TextWrapping="Wrap" Text="Duração:" FontSize="18" Grid.Column="1" Foreground="White"/>
+                    <TextBlock x:Name="classificacao" Margin="15.667,153,200,27" TextWrapping="Wrap" Text="Classificação:" FontSize="18" Grid.Column="1" Foreground="White"/>
+                    <Rectangle Fill="#FF303030" Height="4" Margin="0,51,0,0" Stroke="#FF424242" VerticalAlignment="Top" Grid.ColumnSpan="2"/>
+                    <Rectangle Fill="#FF303030" Height="4" Margin="0,96,0,0" Stroke="#FF424242" VerticalAlignment="Top" Grid.ColumnSpan="2"/>
+                    <Rectangle Fill="#FF303030" Height="4" Margin="0,143,0,0" Stroke="#FF424242" VerticalAlignment="Top" Grid.ColumnSpan="2"/>
+                    <Rectangle Fill="#FF303030" Height="4" Margin="0,189,0,0" Stroke="#FF424242" VerticalAlignment="Top" Grid.ColumnSpan="2"/>
+                    <TextBlock x:Name="name" Grid.Column="1" Margin="70.667,17,5,163" TextWrapping="Wrap" Text="" FontSize="18" Foreground="White"/>
+                    <TextBlock x:Name="genre" Grid.Column="1" Margin="88.667,62,5,118" TextWrapping="Wrap" Text="" FontSize="18" Foreground="White"/>
+                    <TextBlock x:Name="duration" Grid.Column="1" Margin="96.667,107,4,73" TextWrapping="Wrap" Text="" FontSize="18" Foreground="White"/>
+                    <TextBlock x:Name="classification" Grid.Column="1" Margin="124.667,153,5,27" TextWrapping="Wrap" Text="" FontSize="18" Foreground="White"/>
+                    <Image x:Name="image" Margin="1,8,0,13.333" Grid.Row="1" Grid.ColumnSpan="2"/>
+                </Grid>
             </PivotItem>
-            <PivotItem Header="Cover" Margin="12,-43,12,0">
-                <Image x:Name="image" Margin="18,14,15,13.2"/>
+            <PivotItem Margin="12,-43,12,0" Foreground="{x:Null}" Background="#FF424242">
+                <Grid>
+                    <WebView Margin="4,4,6,4.2" x:Name="trailer"/>
+                </Grid>
             </PivotItem>
         </Pivot>
     </Grid>

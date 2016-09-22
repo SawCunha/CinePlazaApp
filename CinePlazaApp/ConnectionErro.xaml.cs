@@ -1,5 +1,4 @@
-﻿using CinePlazaApp.Model;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -12,7 +11,6 @@ using Windows.UI.Xaml.Controls.Primitives;
 using Windows.UI.Xaml.Data;
 using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
-using Windows.UI.Xaml.Media.Imaging;
 using Windows.UI.Xaml.Navigation;
 
 // The Blank Page item template is documented at http://go.microsoft.com/fwlink/?LinkId=234238
@@ -22,30 +20,17 @@ namespace CinePlazaApp
     /// <summary>
     /// An empty page that can be used on its own or navigated to within a Frame.
     /// </summary>
-    public sealed partial class MoviePage : Page
+    public sealed partial class ConnectionErro : Page
     {
-        
-
-        public MoviePage()
+        public ConnectionErro()
         {
             this.InitializeComponent();
-        }
-
-        protected override void OnNavigatedTo(NavigationEventArgs e)
-        {
-            Movie dados = e.Parameter as Movie;
-            name.Text = dados.name;
-            genre.Text = dados.genre;
-            classification.Text = dados.classification;
-            duration.Text = dados.duration;
-            image.Source = new BitmapImage(new Uri(dados.cover));
-            trailer.Source = new Uri(dados.trailer);
-            
         }
 
         private void backBtn_Click(object sender, RoutedEventArgs e)
         {
             Frame.Navigate(typeof(MainPage));
         }
+
     }
 }

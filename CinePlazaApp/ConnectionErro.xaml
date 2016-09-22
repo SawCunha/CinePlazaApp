@@ -1,0 +1,36 @@
+﻿<Page
+    x:Class="CinePlazaApp.ConnectionErro"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:CinePlazaApp"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d" Background="#FF212121">
+
+    <Grid Background="#FF303030">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="7*"/>
+            <RowDefinition Height="57*"/>
+        </Grid.RowDefinitions>
+        <Canvas Margin="3,5">
+            <Canvas.Background>
+                <SolidColorBrush Color="#FF212121"/>
+            </Canvas.Background>
+            <TextBlock x:Name="textBlock" Canvas.Left="101" TextWrapping="Wrap" Text="CinePlazaApp" Canvas.Top="5" Width="245" Height="41" Foreground="White" FontFamily="Script MT Bold" FontSize="36" FontWeight="Bold" FontStyle="Italic" SelectionHighlightColor="Black"/>
+            <AppBarButton x:Name="backBtn" Icon="Back" Canvas.Left="15" Canvas.Top="4" Foreground="White" Height="39" BorderBrush="Red" Background="{x:Null}" Click="backBtn_Click"/>
+        </Canvas>
+        <Canvas Margin="10" Grid.Row="1" Background="#FF424242">
+            <Image x:Name="image" Source="Assets/offline.png" Stretch="Fill" Height="310" Canvas.Top="10" Width="340"/>
+            <TextBlock x:Name="textBlock1" Canvas.Left="10" TextWrapping="Wrap" Canvas.Top="325" Height="215" Width="320" Foreground="White">
+            	<Run Text="&#x9;"/>
+            	<Run Text="O App necessita de Conexão"/>
+            	<LineBreak/>
+            	<Run Text=" "/>
+            	<Run Text="&#x9;"/>
+            	<Run Text="com a internet para Funcionar"/>
+            	<Run Text="..."/>
+            </TextBlock>
+        </Canvas>
+
+    </Grid>
+</Page>

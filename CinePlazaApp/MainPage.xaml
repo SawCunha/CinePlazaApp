@@ -7,29 +7,30 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
 
-    <Grid Background="Black">
+    <Grid Background="#FF303030">
         <Grid.RowDefinitions>
             <RowDefinition Height="85*"/>
             <RowDefinition Height="609*"/>
             <RowDefinition Height="74*"/>
         </Grid.RowDefinitions>
-        <Canvas Margin="3,5,3,3.8">
+        <Canvas Margin="1,3,5,5.667">
             <Canvas.Background>
-                <SolidColorBrush Color="#FF534949" Opacity="0.35"/>
+                <SolidColorBrush Color="#FF212121"/>
             </Canvas.Background>
-            <TextBlock x:Name="textBlock" Canvas.Left="117" TextWrapping="Wrap" Text="CinePlazaApp" Canvas.Top="19" Width="303" Height="41" Foreground="Red" FontFamily="Script MT Bold" FontSize="36" FontWeight="Bold" FontStyle="Italic" SelectionHighlightColor="Black" />
+            <TextBlock x:Name="textBlock" Canvas.Left="98" TextWrapping="Wrap" Text="CinePlazaApp" Canvas.Top="10" Width="246" Height="41" Foreground="White" FontFamily="Script MT Bold" FontSize="36" FontWeight="Bold" FontStyle="Italic" SelectionHighlightColor="Black" />
         </Canvas>
-        <ListView x:Name="listMovies" Margin="5,1.2,4,3" Grid.Row="1">
+        <ListView x:Name="listMovies" Margin="5,1.333,4,3.333" Grid.Row="1">
             <ListView.Background>
-                <SolidColorBrush Color="#FF534949" Opacity="0.35"/>
+                <SolidColorBrush Color="#FF303030"/>
             </ListView.Background>
         </ListView>
         <Canvas Margin="5,0,5,3" Grid.Row="2">
             <Canvas.Background>
-                <SolidColorBrush Color="#FF534949" Opacity="0.35"/>
+                <SolidColorBrush Color="#FF212121" Opacity="0.975"/>
             </Canvas.Background>
-            <TextBlock x:Name="week" Canvas.Left="10" TextWrapping="Wrap" Canvas.Top="14" Width="402" Height="41" Foreground="Red" FontFamily="Script MT Bold" FontSize="24" FontWeight="Bold" FontStyle="Italic" SelectionHighlightColor="Black" />
+            <TextBlock x:Name="week" Canvas.Left="11" TextWrapping="Wrap" Canvas.Top="9" Width="330" Height="41" Foreground="White" FontFamily="Script MT Bold" FontSize="20" FontWeight="Bold" FontStyle="Italic" SelectionHighlightColor="Black" />
         </Canvas>
-
+        <ProgressRing x:Name="myProgressRing" IsActive="True" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Height="175" Canvas.Left="85" Canvas.Top="143" Width="170" Foreground="Black" Margin="95,159.333,95,173.333" Grid.Row="1" Background="{x:Null}" />
+        
     </Grid>
 </Page>
