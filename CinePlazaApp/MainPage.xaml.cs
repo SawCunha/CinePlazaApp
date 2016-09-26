@@ -43,7 +43,7 @@ namespace CinePlazaApp
 
         private async void inicializa_app()
         {
-            
+
             if (verifica_conexao())
                 gera_movies();
             else
@@ -79,7 +79,7 @@ namespace CinePlazaApp
             while (movies == null)
             {
                 myProgressRing.Visibility = Visibility.Visible;
-                await Task.Delay(TimeSpan.FromSeconds(5 ));
+                await Task.Delay(TimeSpan.FromSeconds(5));
             }
             myProgressRing.Visibility = Visibility.Collapsed;
             week.Text = movies.week;
@@ -89,7 +89,6 @@ namespace CinePlazaApp
 
         private void gera_list_movies(Movies movies)
         {
-            listMovies.Items.Add(cria_separador());
             foreach (Movie movie in movies.movies)
             {
                 listMovies.Items.Add(cria_canvas_movie(movie));
@@ -100,13 +99,7 @@ namespace CinePlazaApp
         private Canvas cria_separador()
         {
             Canvas canvas = new Canvas();
-            Rectangle separador = new Rectangle();
-            separador.Height = 4;
-            separador.Stroke  = new SolidColorBrush(Colors.Red);
-            separador.Fill = new SolidColorBrush(Colors.Red);
-            Canvas.SetLeft(separador, 1);
-            Canvas.SetTop(separador, 2);
-            canvas.Children.Add(separador);
+            canvas.Height = 2;
             return canvas;
         }
 
@@ -118,6 +111,11 @@ namespace CinePlazaApp
             </ Canvas >*/
 
             Canvas canvasMovie = new Canvas();
+
+            Rectangle r = new Rectangle();
+            r.Height = 107;
+            r.Width = listMovies.ActualWidth;
+            r.Fill = new SolidColorBrush(Color.FromArgb(100, 22,22,22));
 
             TextBlock nameMovie = new TextBlock();
             nameMovie.Text = movie.name;
@@ -142,16 +140,18 @@ namespace CinePlazaApp
             image.Source = new BitmapImage(new Uri(movie.cover));
             Canvas.SetLeft(image, 6);
             Canvas.SetTop(image, 5);
-            canvasMovie.Background = new SolidColorBrush(Color.FromArgb(100,66,66,66));
             canvasMovie.Height = 107;
-
+            Canvas.SetLeft(r, 0);
+            Canvas.SetTop(r, 0);
+            canvasMovie.Children.Add(r);
             canvasMovie.Children.Add(nameMovie);
             canvasMovie.Children.Add(genreMovie);
             canvasMovie.Children.Add(image);
+
             canvasMovie.Name = movie.name;
             canvasMovie.PointerReleased += CanvasMovies_Released;
 
-            return canvasMovie;  
+            return canvasMovie;
         }
 
         private void CanvasMovies_Released(object sender, PointerRoutedEventArgs e)
