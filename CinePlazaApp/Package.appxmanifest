@@ -26,9 +26,7 @@
       <Extensions>
         <Extension Category="windows.backgroundTasks" EntryPoint="Services.CheckMovie">
           <BackgroundTasks>
-            <Task Type="systemEvent" />
             <Task Type="timer" />
-            <Task Type="pushNotification" />
           </BackgroundTasks>
         </Extension>
       </Extensions>

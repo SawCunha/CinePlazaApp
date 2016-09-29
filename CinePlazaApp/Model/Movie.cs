@@ -3,11 +3,17 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using SQLite.Net.Attributes;
+using SQLiteNetExtensions.Attributes;
 
 namespace CinePlazaApp.Model
 {
-    class Movie
+    [Table("movie")]
+    public class Movie
     {
+        [PrimaryKey, AutoIncrement]
+        public long id { get; set; }
+
         public String name { get; set; }
         public String cover { get; set; }
         public String trailer { get; set; }

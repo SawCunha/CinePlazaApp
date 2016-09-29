@@ -101,6 +101,10 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
+    <Compile Include="DataBase\DbConnection.cs" />
+    <Compile Include="DataBase\DbFunctions.cs" />
+    <Compile Include="DataBase\MoviesRepository.cs" />
+    <Compile Include="functions\AuxiliaryFunctions.cs" />
     <Compile Include="functions\RegisterService.cs" />
     <Compile Include="ConnectionErro.xaml.cs">
       <DependentUpon>ConnectionErro.xaml</DependentUpon>
@@ -108,6 +112,7 @@
     <Compile Include="functions\ProcessaHTTP.cs" />
     <Compile Include="Model\Movie.cs" />
     <Compile Include="Model\Movies.cs" />
+    <Compile Include="Model\MoviesMovie.cs" />
     <Compile Include="MoviePage.xaml.cs">
       <DependentUpon>MoviePage.xaml</DependentUpon>
     </Compile>
@@ -164,11 +169,13 @@
     <SDKReference Include="Microsoft.VCLibs.120, Version=14.0">
       <Name>Microsoft Visual C++ 2013 Runtime Package for Windows Universal</Name>
     </SDKReference>
+    <SDKReference Include="SQLite.UWP.2015, Version=3.14.2">
+      <Name>SQLite for Universal Windows Platform</Name>
+    </SDKReference>
   </ItemGroup>
   <ItemGroup>
-    <Reference Include="Services, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\Services\bin\Debug\Services.winmd</HintPath>
+    <Reference Include="Services">
+      <HintPath>..\Services\bin\Release\Services.winmd</HintPath>
     </Reference>
   </ItemGroup>
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">

@@ -16,3 +16,4 @@ C:\Users\samuk\OneDrive\GIT\CinePlazaApp\Services\obj\Release\pri.resfiles.inter
 C:\Users\samuk\OneDrive\GIT\CinePlazaApp\Services\obj\Release\qualifiers.txt
 C:\Users\samuk\OneDrive\GIT\CinePlazaApp\Services\obj\Release\qualifiers.txt.intermediate
 C:\Users\samuk\OneDrive\GIT\CinePlazaApp\Services\obj\Release\MultipleQualifiersPerDimensionFound.txt
+C:\Users\samuk\OneDrive\GIT\CinePlazaApp\Services\obj\Release\Services.csprojResolveAssemblyReference.cache

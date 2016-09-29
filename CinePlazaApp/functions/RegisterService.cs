@@ -28,9 +28,12 @@ namespace CinePlazaApp.functions
             
             // register a new task
             BackgroundTaskBuilder taskBuilder = new BackgroundTaskBuilder { Name = "FirstTask", TaskEntryPoint = "Services.CheckMovie" };
-            taskBuilder.SetTrigger(new TimeTrigger(15, false));
+            //taskBuilder.SetTrigger(new TimeTrigger(15, false));new SystemTrigger(SystemTriggerType.LockScreenApplicationAdded, false)
+            IBackgroundTrigger trigger = new TimeTrigger(15, false);
+            taskBuilder.SetTrigger(trigger);
+            taskBuilder.AddCondition(new SystemCondition(SystemConditionType.InternetAvailable));
             BackgroundTaskRegistration myFirstTask = taskBuilder.Register();
-
+            
             Debug.Write("Task register");
 
         }

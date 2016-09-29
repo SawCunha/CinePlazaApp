@@ -1,4 +1,5 @@
-﻿using CinePlazaApp.functions;
+﻿using CinePlazaApp.DataBase;
+using CinePlazaApp.functions;
 using CinePlazaApp.Model;
 using System;
 using System.Collections.Generic;
@@ -47,39 +48,21 @@ namespace CinePlazaApp
 
         private async void inicializa_app()
         {
-           
-            if (verifica_conexao())
-                gera_movies();
+            Movies movies = await DbFunctions.obtem_movies();
+            if (AuxiliaryFunctions.checks_connection() || movies != null)
+            {
+                gera_movies(movies);
+            }
             else
                 //Transfere para tela informada
                 await Dispatcher.RunAsync(CoreDispatcherPriority.Normal, () => Frame.Navigate(typeof(ConnectionErro)));
         }
 
-        private bool verifica_conexao()
-        {
-            try
-            {
-                /*Verfica se o smartphone está conectado a internet caso
-                    esteja trasnfere para a tela de pesquisa, caso não ele
-                    informa o usuario que tem que estar conectado 
-                */
-                if (!NetworkInterface.GetIsNetworkAvailable())
-                {
-                    return false;
-                }
-                else
-                    return true;
-            }
-            catch (Exception)
-            {
-                return false;
-            }
-        }
+        
 
-        public async void gera_movies()
+        public async void gera_movies(Movies movies)
         {
-            Movies movies = null;
-            movies = await ProcessaHTTP.processaAPI();
+            if(movies == null) movies = await ProcessaHTTP.processaAPI();
             while (movies == null)
             {
                 myProgressRing.Visibility = Visibility.Visible;
@@ -88,8 +71,11 @@ namespace CinePlazaApp
             myProgressRing.Visibility = Visibility.Collapsed;
             week.Text = movies.week;
             moviesObj = movies.movies;
+            DbFunctions.salva_movies(movies);
             gera_list_movies(movies);
         }
+
+        
 
         private void gera_list_movies(Movies movies)
         {
